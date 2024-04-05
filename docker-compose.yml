@@ -1,0 +1,14 @@
+version: "3.9"
+services:
+  oracle:
+    image: container-registry.oracle.com/database/express:latest
+    container_name: oracle_xe
+    environment:
+      ORACLE_SID: XE
+    volumes:
+      - ./opt/oracle/oradata:/opt/oracle/oradata
+      - ./home/oracle/:/home/oracle/
+    ports:
+      - 1521:1521
+      - 5500:5500
+      - 2484:2484
